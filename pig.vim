@@ -7,13 +7,35 @@ endif
 
 syn case ignore
 
-syn keyword PigKeyword COGROUP CROSS DEFINE DISTINCT FILTER FOREACH GROUP
-syn keyword PigKeyword IMPORT JOIN LIMIT LOAD MAPREDUCE ORDER BY SAMPLE SPLIT 
-syn keyword PigKeyword STORE STREAM UNION REGISTER
+
+syn keyword PigKeyword FOREACH GENERATE
+
+syn keyword PigKeyword COGROUP CROSS DISTINCT FILTER GROUP
+syn keyword PigKeyword LIMIT MAPREDUCE ORDER SAMPLE  
+
+syn keyword PigKeyword UNION ONSCHEMA
+
+syn keyword PigKeyword STREAM THROUGH 
+
+syn keyword PigKeyword SPLIT IF OTHERWISE
+
+" Define/Import/Register
+syn keyword PigKeyword DEFINE IMPORT REGISTER 
+
+" Load/Store
+syn keyword PigKeyword LOAD STORE INTO USING AS
+
+" Join keyword
+syn keyword PigKeyword JOIN BY LEFT RIGHT FULL OUTER PARTITION PARALLEL
 
 " Debugging
 syn keyword PigKeyword DUMP DESCRIBE EXPLAIN ILLUSTRATE
 
+" Type
+syn keyword PigType CHARARRAY BYTEARRAY INT LONG FLOAT DOUBLE BOOLEAN
+syn keyword PigType TUPLE BAG MAP
+
+syn keyword PigOperator AND OR NOT EQ NEQ GT LT GTE LTE MATCHES IS
 
 " Eval Functions
 syn keyword PigFunc AVG CONCAT COUNT COUNT_STAR DIFF IsEmpty 
@@ -36,6 +58,8 @@ syn keyword PigFunc UPPER
 syn keyword PigFunc TOTUPLE TOBAG TOMAP TOP
 
 hi def link PigKeyword 	Statement
+hi def link PigType     Type
+hi def link PigOperator Operator
 hi def link PigFunc 	Function
 
 let b:current_syntax = "pig"
