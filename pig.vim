@@ -62,6 +62,7 @@ syn keyword PigSet  default_parallel debug job.name job.priority stream.skippath
 syn keyword PigTodo TODO contained
 
 syn match PigComment "--.*$" contains=PigTodo
+syn region PigComment start="/\*" end="\*/" contains=PigTodo
 
 syn match PigVar    "$\w\+" 
 syn match PigVar    "^\s*[a-zA-Z][a-zA-Z0-9_]*\s*=" contains=ExcludeEq
